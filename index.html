@@ -1,33 +1,134 @@
+
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#07111d">
-<meta name="description" content="einsamer_Wolf_JP – Musik, die aus mir kommt. Willkommen im Wolfsrevier.">
-<title>einsamer_Wolf_JP | Das Wolfsrevier</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>einsamer_Wolf_JP – Wolfsrevier</title>
 <style>
-:root{--night:#050a12;--panel:#101b29;--ice:#83dfff;--gold:#e5b85d;--violet:#a58bff;--silver:#dce8f2;--muted:#aebdca}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#172b43 0,#080f1a 42%,#04070d 100%);color:#edf4fa;font-family:Georgia,'Times New Roman',serif;line-height:1.65}a{color:var(--gold);text-decoration:none}a:hover{color:#fff}.wrap{width:min(1120px,92%);margin:auto}.topbar{position:sticky;top:0;z-index:20;background:#050a12eF;border-bottom:1px solid #b88b4544;backdrop-filter:blur(12px)}nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}.brand{font-weight:bold;letter-spacing:.08em;color:#f4e4c3}.links{display:flex;gap:18px;flex-wrap:wrap;font:14px Arial,sans-serif}.links a{color:#d9e4ee}.hero{min-height:80vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:linear-gradient(#03091455,#030914d9),url('assets/titelbild-draugr.png') center 28%/cover}.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 25%,#030711a8 100%);pointer-events:none}.hero-inner{position:relative;z-index:1;padding:80px 12px}.hero h1{font-size:clamp(2.3rem,7vw,5.6rem);margin:0;color:#fff;text-shadow:0 0 8px #8bdfff,0 0 22px #7b66ff,0 0 42px #d9a84c;letter-spacing:.04em}.hero .welcome{font-size:clamp(1.4rem,3vw,2.3rem);color:#e8eaf6;text-shadow:0 0 10px #b6a0ff,0 0 24px #d9b15a}.tagline{font-size:clamp(1rem,2vw,1.35rem);color:#f4d99b;text-shadow:0 0 12px #d69a39}.rune-line{color:var(--gold);letter-spacing:.5em;text-shadow:0 0 7px #ffcc64,0 0 18px #d58a25;animation:glow 3.5s ease-in-out infinite alternate}@keyframes glow{from{text-shadow:0 0 5px #c98b32;opacity:.72}to{text-shadow:0 0 12px #ffda79,0 0 28px #d38a22;opacity:1}}.btn{display:inline-block;margin:10px 6px;padding:12px 22px;border:1px solid var(--gold);border-radius:30px;background:#111b29cc;color:#ffe3a6;font: bold 14px Arial,sans-serif;box-shadow:0 0 16px #d99d3540}.section{padding:76px 0;position:relative}.section h2{text-align:center;font-size:clamp(1.8rem,4vw,3rem);color:#f3d79c;text-shadow:0 0 12px #b98742;margin:0 0 12px}.sub{text-align:center;color:var(--muted);max-width:720px;margin:0 auto 34px}.panel{background:linear-gradient(145deg,#142235dd,#080e18ee);border:1px solid #c69a4a66;border-radius:18px;padding:clamp(18px,4vw,34px);box-shadow:0 0 24px #b57b2830,inset 0 0 24px #5c8eb012}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}.portrait{width:100%;height:100%;max-height:520px;object-fit:cover;border-radius:16px;border:1px solid #d6ad62;box-shadow:0 0 22px #c7953b44}.figure{width:100%;max-height:520px;object-fit:cover;object-position:center;border-radius:16px;border:1px solid #5faeea88;box-shadow:0 0 22px #4b9ed044}.about-copy h3{color:#f1d49a}.about-copy p{color:#d5e0e9}.runes{border:1px solid #d6a84e88;border-radius:16px;padding:8px;margin:18px 0;box-shadow:0 0 18px #d49b3a33;position:relative}.runes:before{content:"ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛃ ᛇ ᛈ ᛉ ᛊ";display:block;text-align:center;color:#e8bd65;letter-spacing:.5em;text-shadow:0 0 8px #ffca54,0 0 18px #c98222;animation:glow 3s infinite alternate}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}.card{background:#0c1725;border:1px solid #b88c4b66;border-radius:14px;overflow:hidden;box-shadow:0 8px 24px #0008}.card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}.card h3{padding:0 16px;color:#f1d59d}.card p{padding:0 16px 14px;color:#b9c8d6;font:14px Arial,sans-serif}.video-frame{padding:10px;border:2px solid #d6a84e;border-radius:20px;box-shadow:0 0 12px #e9b64b,0 0 36px #9b6329aa;position:relative;background:#080d15}.video-frame:before,.video-frame:after{content:"ᚠ ᚱ ᚨ ᛉ ᛟ ᚾ ᛞ ᛁ ᛊ";display:block;text-align:center;color:#f1c66e;letter-spacing:.65em;text-shadow:0 0 8px #ffce62,0 0 20px #c57c20;animation:glow 2.8s infinite alternate;padding:6px;font-size:clamp(10px,2vw,16px)}video{display:block;width:100%;max-height:620px;background:#000;border-radius:10px}.player{display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center}.player img{width:130px;height:130px;object-fit:cover;border-radius:12px;border:1px solid var(--gold)}.player h3{margin:0;color:#f1d59d}.spotify{width:100%;height:352px;border:0;border-radius:12px}.wolf{position:fixed;right:16px;bottom:16px;z-index:30;width:112px;cursor:pointer;filter:drop-shadow(0 0 12px #5ccfff);transition:transform .25s}.wolf:hover{transform:scale(1.06)}.bubble{position:fixed;right:135px;bottom:38px;z-index:30;max-width:260px;background:#101d2b;border:1px solid #d7ad5d;border-radius:14px;padding:13px;color:#f5e4bf;box-shadow:0 0 20px #d6a34866;font:14px Arial,sans-serif}.bubble button{float:right;background:none;border:0;color:#fff;font-size:18px}.footer{text-align:center;padding:38px 0;color:#9eafbf;border-top:1px solid #b88b4533;font:13px Arial,sans-serif}
-@media(max-width:700px){.links{gap:9px;font-size:12px}.about-grid{grid-template-columns:1fr}.player{grid-template-columns:90px 1fr}.player img{width:90px;height:90px}.hero{min-height:72vh}.wolf{width:78px}.bubble{right:90px;bottom:22px;max-width:220px}}
+*{box-sizing:border-box}
+body{margin:0;background:#070d17;color:#edf4fa;font-family:Georgia,serif;line-height:1.65}
+a{color:#edc56f}
+.wrap{width:min(1050px,92%);margin:auto}
+.hero{text-align:center;padding:100px 12px;background:linear-gradient(#06101b88,#06101bee),url('titelbild-draugr.png') center/cover}
+.hero h1{font-size:clamp(2.5rem,8vw,5rem);text-shadow:0 0 10px #83dfff,0 0 24px #a58bff,0 0 40px #e5b85d}
+.hero h2{color:#e5c98d;text-shadow:0 0 12px #b99bff}
+.gold{color:#e5b85d;text-shadow:0 0 8px #ffce62,0 0 20px #c98222;letter-spacing:.4em;animation:glow 3s infinite alternate}
+@keyframes glow{to{text-shadow:0 0 15px #ffe29a,0 0 28px #d38a22}}
+nav{position:sticky;top:0;background:#050a12;padding:14px;text-align:center;z-index:3}
+nav a{margin:0 9px;text-decoration:none}
+.section{padding:60px 0}
+.section h2{text-align:center;color:#f0d49b;font-size:2rem}
+.panel{background:#101c2b;border:1px solid #c69a4a88;border-radius:16px;padding:24px;box-shadow:0 0 20px #b57b2830}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;border:1px solid #d6ad62}
+.copy{grid-column:1/-1}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.card{background:#101c2b;border:1px solid #b88c4b66;border-radius:12px;overflow:hidden}
+.card img{width:100%;aspect-ratio:1;object-fit:cover}
+.card h3,.card p{padding:0 14px}
+.spotify{width:100%;height:352px;border:0;border-radius:12px}
+.bubble{position:fixed;right:100px;bottom:22px;background:#142235;border:1px solid #e5b85d;border-radius:12px;padding:12px;max-width:230px;z-index:5}
+.wolf{position:fixed;right:12px;bottom:12px;width:78px;height:78px;object-fit:cover;object-position:top;border-radius:50%;border:2px solid #83dfff;box-shadow:0 0 16px #5ccfff;z-index:6;cursor:pointer}
+footer{text-align:center;padding:30px;color:#9eafbf}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.copy{grid-column:auto}nav a{margin:0 4px;font-size:12px}}
 </style>
 </head>
 <body>
-<header class="topbar"><nav class="wrap"><a class="brand" href="#start">ᚠ einsamer_Wolf_JP</a><div class="links"><a href="#musik">Musik</a><a href="#video">Video</a><a href="#about">Über mich</a><a href="#news">Neuigkeiten</a><a href="#shop">Shop</a></div></nav></header>
-<section class="hero" id="start"><div class="hero-inner wrap"><div class="rune-line">ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ</div><h1>einsamer_Wolf_JP</h1><p class="welcome">Willkommen im Wolfsrevier</p><p class="tagline">Nicht perfekt. Nicht angepasst. Einfach ich!</p><p class="rune-line">ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ</p><a class="btn" href="#musik">Die Musik entdecken</a><a class="btn" href="#about">Den Menschen kennenlernen</a></div></section>
-<main>
-<section class="section wrap" id="musik"><h2>DER WOLFSKLANG</h2><p class="sub">Musik, die aus mir kommt – eigene Texte, Gedanken und Geschichten, musikalisch zum Leben erweckt.</p><div class="panel"><div class="player"><img src="assets/cover-magic-des-nordens.png" alt="Magic des Nordens"><div><h3>Der Ruf des Wolfs</h3><p>Entdecke meine Musik auf Spotify.</p><a class="btn" href="https://open.spotify.com/artist/37ZZlY44OdiWqOb5VZCZuf" target="_blank" rel="noopener">Spotify öffnen</a></div></div><iframe class="spotify" src="https://open.spotify.com/embed/artist/37ZZlY44OdiWqOb5VZCZuf?utm_source=generator" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Spotify Künstlerprofil"></iframe><div class="runes"></div></div></section>
-<section class="section wrap" id="video"><h2>Aus dem Wolfsrevier</h2><p class="sub">Ein Einblick in die Welt von einsamer_Wolf_JP.</p><div class="video-frame"><video controls playsinline preload="metadata" poster="assets/titelbild-draugr.png"><source src="assets/wolfsrevier-video.mp4" type="video/mp4">Dein Browser unterstützt dieses Video leider nicht.</video></div></section>
-<section class="section wrap" id="about"><h2>Über mich – Der Mensch hinter dem Wolf</h2><p class="sub">Zwei Seiten. Ein Mensch. Eine musikalische Seele.</p><div class="runes"><div class="about-grid"><img class="portrait" src="assets/jens-portrait-sonnenuntergang.png" alt="Porträt von Jens bei Sonnenuntergang"><img class="figure" src="assets/kuenstlerfigur-fenrir.png" alt="Nordische Künstlerfigur mit Wolf"></div><div class="about-copy panel"><h3>Nicht perfekt. Nicht angepasst. Einfach ich!</h3><p>Hinter dem Namen steckt Jens – ein Mensch mit Ecken und Kanten, Herz, Humor, eigenen Gedanken und einer eigenen Sicht auf die Dinge. Ich verstelle mich nicht, um anderen zu gefallen. Ich habe meine Meinung, meine Überzeugungen und meinen eigenen Weg.</p><h3>Musik, die aus mir kommt</h3><p>Ich schreibe meine Songtexte selbst – aus Ideen, Gedanken, Beobachtungen und Geschichten, die das Leben schreibt. Die musikalische Umsetzung und Produktion entstehen mit Unterstützung von KI. Die Worte und der kreative Kern stammen von mir. Ich möchte Texte schaffen, die ausdrücken, berühren und zum Nachdenken anregen.</p><h3>Und wer ist Jens?</h3><p>Beruflich arbeite ich als Altenpflegefachkraft. Menschlichkeit, Geduld, Respekt und Humor sind dabei wichtig. Mein kreativer Weg und meine Arbeit in der Pflege sind zwei Seiten meines Lebens.</p><h3>Mein Motto</h3><p>Ich muss nicht jedem gefallen und nicht in jede Schublade passen. Lieber echt als perfekt. Lieber eigenständig als angepasst.</p><p><strong>Willkommen in der Welt von einsamer_Wolf_JP! Schön, dass du vorbeischaust. Hör rein, schau dich um und lerne meine musikalische Welt kennen.</strong></p></div></div></section>
-<section class="section wrap" id="news"><h2>Neues aus dem Wolfsrevier</h2><p class="sub">Hier erscheinen künftig neue Songs, Veröffentlichungen, Videos und Ankündigungen.</p><div class="panel" style="text-align:center"><div class="rune-line">ᚠ ✦ ᚱ ✦ ᛟ</div><h3>Der nächste Ruf kommt bald …</h3><p>Schau wieder vorbei und entdecke, was es Neues gibt.</p></div></section>
-<section class="section wrap"><h2>Die Musik des Wolfs</h2><p class="sub">Einige Motive und Veröffentlichungen aus meinem musikalischen Weg.</p><div class="cards"><article class="card"><img src="assets/cover-magic-des-nordens.png" alt="Magic des Nordens"><h3>Magic des Nordens</h3><p>Nordische Klänge und Magie.</p></article><article class="card"><img src="assets/cover-i-nata-linte.png" alt="I Nátá Linté"><h3>I Nátá Linté</h3><p>Ein eigener musikalischer Weg.</p></article><article class="card"><img src="assets/cover-wege-der-ahnen.png" alt="Wege der Ahnen"><h3>Wege der Ahnen</h3><p>Spuren, Herkunft und Erinnerung.</p></article><article class="card"><img src="assets/cover-die-seele-des-wolfes.png" alt="Die Seele des Wolfes"><h3>Die Seele des Wolfes</h3><p>Ein Blick in die Welt des Wolfs.</p></article></div></section>
-<section class="section wrap" id="shop"><h2>Wolfsrevier-Shop</h2><p class="sub">Der Shop ist in Vorbereitung. Hier findest du später Fanartikel und Motive aus der Welt von einsamer_Wolf_JP.</p><div class="panel" style="text-align:center"><div class="rune-line">ᛟ ᚹ ᛟ</div><h3>Bald im Wolfsrevier</h3><p>T-Shirts, Hoodies, Tassen und mehr – sobald der Shop eröffnet ist.</p></div></section>
-<section class="section wrap"><h2>Folge dem Ruf</h2><p class="sub">Meine Musik findest du auf Spotify und weiteren Streaming-Plattformen.</p><div class="panel" style="text-align:center"><a class="btn" href="https://open.spotify.com/artist/37ZZlY44OdiWqOb5VZCZuf" target="_blank" rel="noopener">Spotify</a><p style="color:#aebdca">Weitere Social-Media- und Kontaktlinks ergänzen wir, sobald die Profiladressen vorliegen.</p></div></section>
+<nav>
+<a href="#musik">Musik</a>
+<a href="#about">Über mich</a>
+<a href="#news">Neuigkeiten</a>
+<a href="#shop">Shop</a>
+</nav>
+
+<header class="hero">
+<div class="gold">ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ</div>
+<h1>einsamer_Wolf_JP</h1>
+<h2>Willkommen im Wolfsrevier</h2>
+<p class="gold" style="letter-spacing:normal">Nicht perfekt. Nicht angepasst. Einfach ich!</p>
+<div class="gold">ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ</div>
+</header>
+
+<main class="wrap">
+<section class="section" id="musik">
+<h2>DER WOLFSKLANG</h2>
+<div class="panel">
+<p>Musik, die aus mir kommt – eigene Texte, Gedanken und Geschichten, musikalisch zum Leben erweckt.</p>
+<iframe class="spotify" src="https://open.spotify.com/embed/artist/37ZZlY44OdiWqOb5VZCZuf" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Spotify Künstlerprofil"></iframe>
+<div class="gold" style="text-align:center">ᚠ ᚱ ᚨ ᛉ ᛟ</div>
+</div>
+</section>
+
+<section class="section" id="about">
+<h2>Über mich – Der Mensch hinter dem Wolf</h2>
+<div class="panel">
+<div class="grid">
+<img src="jens-portrait-sonnenuntergang.png" alt="Jens bei Sonnenuntergang">
+<img src="kuenstlerfigur-fenrir.png" alt="Künstlerfigur mit Wolf">
+<div class="copy">
+<div class="gold">ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ</div>
+<h3>Nicht perfekt. Nicht angepasst. Einfach ich!</h3>
+<p>Hinter dem Namen steckt Jens – ein Mensch mit Ecken und Kanten, Herz, Humor, eigenen Gedanken und einer eigenen Sicht auf die Dinge. Ich verstelle mich nicht, um anderen zu gefallen. Ich habe meine Meinung, meine Überzeugungen und meinen eigenen Weg.</p>
+<h3>Musik, die aus mir kommt</h3>
+<p>Ich schreibe meine Songtexte selbst – aus Ideen, Gedanken, Beobachtungen und Geschichten, die das Leben schreibt. Die musikalische Umsetzung und Produktion entstehen mit Unterstützung von KI. Die Worte und der kreative Kern stammen von mir. Ich möchte Texte schaffen, die ausdrücken, berühren und zum Nachdenken anregen.</p>
+<h3>Und wer ist Jens?</h3>
+<p>Beruflich arbeite ich als Altenpflegefachkraft. Menschlichkeit, Geduld, Respekt und Humor sind dabei wichtig. Mein kreativer Weg und meine Arbeit in der Pflege sind zwei Seiten meines Lebens.</p>
+<h3>Mein Motto</h3>
+<p>Ich muss nicht jedem gefallen und nicht in jede Schublade passen. Lieber echt als perfekt. Lieber eigenständig als angepasst.</p>
+<p><strong>Willkommen in der Welt von einsamer_Wolf_JP! Schön, dass du vorbeischaust. Hör rein, schau dich um und lerne meine musikalische Welt kennen.</strong></p>
+<div class="gold">ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="news">
+<h2>Neues aus dem Wolfsrevier</h2>
+<div class="panel" style="text-align:center">
+<p>Hier erscheinen künftig neue Songs, Veröffentlichungen und Ankündigungen.</p>
+<div class="gold">ᚠ ✦ ᚱ ✦ ᛟ</div>
+<h3>Der nächste Ruf kommt bald …</h3>
+</div>
+</section>
+
+<section class="section">
+<h2>Die Musik des Wolfs</h2>
+<div class="cards">
+<article class="card"><img src="cover-magic-des-nordens.png" alt="Magic des Nordens"><h3>Magic des Nordens</h3></article>
+<article class="card"><img src="cover-i-nata-linte.png" alt="I Nátá Linté"><h3>I Nátá Linté</h3></article>
+<article class="card"><img src="cover-wege-der-ahnen.png" alt="Wege der Ahnen"><h3>Wege der Ahnen</h3></article>
+<article class="card"><img src="cover-die-seele-des-wolfes.png" alt="Die Seele des Wolfes"><h3>Die Seele des Wolfes</h3></article>
+</div>
+</section>
+
+<section class="section" id="shop">
+<h2>Wolfsrevier-Shop</h2>
+<div class="panel" style="text-align:center">
+<h3>Bald im Wolfsrevier</h3>
+<p>T-Shirts, Hoodies, Tassen und mehr – sobald der Shop eröffnet ist.</p>
+</div>
+</section>
 </main>
-<footer class="footer"><div class="wrap">© einsamer_Wolf_JP · Das Wolfsrevier · <a href="#start">Nach oben</a><p>Impressum und Datenschutzhinweise vor der öffentlichen Veröffentlichung ergänzen.</p></div></footer>
-<div class="bubble" id="bubble">„Willkommen im Wolfsrevier. Folge deiner eigenen Spur.“ <button aria-label="Hinweis schließen" onclick="document.getElementById('bubble').hidden=true">×</button></div>
-<img class="wolf" src="assets/kuenstlerfigur-fenrir.png" alt="Fenrir, Wächter des Wolfsreviers" onclick="wolfHint()" title="Fenrir – antippen für einen Hinweis">
+
+<div class="bubble" id="bubble">„Willkommen im Wolfsrevier. Folge deiner eigenen Spur.“</div>
+<img class="wolf" src="kuenstlerfigur-fenrir.png" alt="Fenrir" onclick="hint()">
+
+<footer>© einsamer_Wolf_JP · Das Wolfsrevier · Impressum und Datenschutz vor Veröffentlichung ergänzen.</footer>
+
 <script>
-const hints=["Willkommen im Wolfsrevier. Folge deiner eigenen Spur.","Pssst … im Wolfsrevier gibt es Musik zu entdecken. Folge dem Ruf zum WOLFSKLANG!","Ein neuer Ruf erklingt! Schau bei „Neues aus dem Wolfsrevier“ vorbei.","Hinter dem Wolf steckt ein echter Mensch mit Herz, Ecken und Kanten. Lerne ihn kennen!"];
-let hi=0;function wolfHint(){hi=(hi+1)%hints.length;const b=document.getElementById('bubble');b.hidden=false;b.firstChild.textContent='„'+hints[hi]+'“ ';}
+let n=0;
+const h=[
+"Willkommen im Wolfsrevier. Folge deiner eigenen Spur.",
+"Pssst … entdecke den WOLFSKLANG!",
+"Schau nach, was es Neues aus dem Wolfsrevier gibt.",
+"Hinter dem Wolf steckt ein echter Mensch mit Herz."
+];
+function hint(){
+n=(n+1)%h.length;
+document.getElementById('bubble').textContent="„"+h[n]+"“";
+}
 </script>
-</body></html>
+</body>
+  </html>
+  
