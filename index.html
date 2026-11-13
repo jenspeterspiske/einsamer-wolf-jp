@@ -74,7 +74,12 @@ nav a{margin:0 4px;font-size:12px}
 <h2>DER WOLFSKLANG</h2>
 <div class="panel">
 <p>Musik, die aus mir kommt – eigene Texte, Gedanken und Geschichten, musikalisch zum Leben erweckt.</p>
-<iframe class="spotify" src="https://open.spotify.com/embed/artist/37ZZlY44OdiWqOb5VZCZuf" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Spotify Künstlerprofil"></iframe>
+<div id="spotify-consent" class="panel" style="text-align:center;background:#0a1524">
+<p>Der Spotify-Player wird erst geladen, wenn du ausdrücklich zustimmst. Dabei wird eine Verbindung zu Spotify hergestellt.</p>
+<button type="button" id="spotify-load" style="padding:12px 22px;border:1px solid #e5b85d;border-radius:28px;background:#172b40;color:#f0d49b;font:inherit;cursor:pointer">Spotify-Player laden</button>
+<p style="font-size:.9rem;color:#aebdca">Die Freigabe gilt nur, solange diese Seite geöffnet ist.</p>
+</div>
+<div id="spotify-player" aria-live="polite"></div>
 <div class="gold" style="text-align:center">ᚠ ᚱ ᚨ ᛉ ᛟ</div>
 </div>
 </section>
@@ -147,9 +152,29 @@ nav a{margin:0 4px;font-size:12px}
 <div class="bubble" id="bubble">„Willkommen im Wolfsrevier. Folge deiner eigenen Spur.“</div>
 <img class="wolf" src="fenrir-wolf-avatar.png" alt="Fenrir" onclick="hint()">
 
-<footer>© einsamer_Wolf_JP · Das Wolfsrevier · Impressum und Datenschutz vor Veröffentlichung ergänzen.</footer>
+<footer>© einsamer_Wolf_JP · Das Wolfsrevier<br><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="kontakt.html">Kontakt</a></footer>
 
 <script>
+const spotifyButton=document.getElementById('spotify-load');
+if(spotifyButton){
+  spotifyButton.addEventListener('click',()=>{
+    const host=document.getElementById('spotify-player');
+    if(!host.querySelector('iframe')){
+      const frame=document.createElement('iframe');
+      frame.className='spotify';
+      frame.src='https://open.spotify.com/embed/artist/37ZZlY44OdiWqOb5VZCZuf';
+      frame.loading='lazy';
+      frame.title='Spotify Künstlerprofil';
+      frame.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+      frame.referrerPolicy='strict-origin-when-cross-origin';
+      host.appendChild(frame);
+      spotifyButton.textContent='Spotify-Player ausblenden';
+    }else{
+      host.innerHTML='';
+      spotifyButton.textContent='Spotify-Player laden';
+    }
+  });
+}
 let n=0;
 const h=[
 "Willkommen im Wolfsrevier. Folge deiner eigenen Spur.",
