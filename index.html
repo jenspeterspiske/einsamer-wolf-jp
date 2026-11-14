@@ -35,6 +35,18 @@ nav a{margin:0 9px;text-decoration:none}
 .bubble.show{display:block}
 .wolf{position:fixed;right:12px;bottom:12px;width:78px;height:78px;object-fit:cover;object-position:top;border-radius:50%;border:2px solid #83dfff;box-shadow:0 0 16px #5ccfff;z-index:6;cursor:pointer}
 footer{text-align:center;padding:30px;color:#9eafbf}
+.trail-panel{background:#0b1726;border:1px solid #c69a4a88;border-radius:16px;padding:22px;text-align:center;box-shadow:0 0 18px #b57b2825}
+.trail-dots{display:flex;justify-content:center;gap:10px;margin:16px 0}
+.trail-dot{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1px solid #98733e;color:#9eafbf;background:#091321;font-size:1.05rem}
+.trail-dot.found{background:#3b2d16;color:#ffe09a;border-color:#e5b85d;box-shadow:0 0 12px #c69a4a66}
+.trail-button{display:inline-flex;align-items:center;gap:8px;margin:16px auto 4px;padding:9px 15px;border-radius:24px;border:1px solid #c69a4a;background:#0a1524;color:#f0d49b;font:inherit;font-size:.92rem;cursor:pointer}
+.trail-button:hover{background:#263b52;box-shadow:0 0 12px #c69a4a55}
+.trail-button.found{border-color:#718b75;color:#b9d4bd}
+.trail-message{margin:8px auto 0;color:#e5c98d;font-size:.95rem;max-width:620px}
+.trail-complete{display:none;margin-top:18px;padding:18px;border:1px solid #e5b85d;border-radius:12px;background:#101c2b}
+.trail-complete.show{display:block}
+@media(max-width:650px){.trail-panel{padding:18px}.trail-dot{width:30px;height:30px}}
+
 @media(max-width:650px){
 .grid{grid-template-columns:1fr}
 .copy{grid-column:auto}
@@ -56,6 +68,7 @@ nav a{margin:0 4px;font-size:12px}
 <a href="#musik">Musik</a>
 <a href="#blick-des-wolfes">Blick des Wolfes</a>
 <a href="#orakel">Orakel</a>
+<a href="#entdeckungsreise">Entdeckungsreise</a>
 <a href="#gaestebuch">Gästebuch</a>
 <a href="#about">Über mich</a>
 <a href="#social">Social Media</a>
@@ -69,10 +82,30 @@ nav a{margin:0 4px;font-size:12px}
 <h2>Willkommen im Wolfsrevier</h2>
 <p class="gold" style="letter-spacing:normal">Nicht perfekt. Nicht angepasst. Einfach ich!</p>
 <div class="gold">ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ</div>
+<div style="text-align:center;margin-top:18px"><button type="button" class="trail-button" data-trail="hero">🐾 Spur entdecken</button><p class="trail-message" id="trail-message-hero" hidden><strong>Der Anfang:</strong> Jede Reise beginnt mit einem ersten Schritt. Schön, dass du deinen Weg ins Wolfsrevier gefunden hast.</p></div>
 </header>
 
 <main class="wrap">
 
+
+
+<section class="section" id="entdeckungsreise">
+<h2>Die Entdeckungsreise – Auf den Spuren des Wolfes</h2>
+<div class="trail-panel">
+<p style="color:#e5c98d;font-size:1.12rem">Der Wolf hat fünf Spuren im Wolfsrevier hinterlassen. Kannst du sie alle entdecken?</p>
+<p>Halte an fünf Stationen Ausschau nach einer kleinen Wolfspfote. Tippe sie an, sammle die Gedanken und finde heraus, welche Überraschung am Ende auf dich wartet.</p>
+<div class="trail-dots" id="trail-progress" aria-label="Fortschritt: 0 von 5 Spuren">
+<span class="trail-dot">🐾</span><span class="trail-dot">🐾</span><span class="trail-dot">🐾</span><span class="trail-dot">🐾</span><span class="trail-dot">🐾</span>
+</div>
+<p id="trail-count" style="color:#e5c98d;margin:0">0 von 5 Spuren gefunden</p>
+<div id="trail-complete" class="trail-complete" aria-live="polite">
+<h3 style="color:#f0d49b;margin-top:0">Du hast alle fünf Spuren gefunden!</h3>
+<p>„Die wichtigste Spur ist die, die du selbst hinterlässt. Geh deinen Weg und verliere deinen Horizont nicht aus den Augen.“</p>
+<p style="color:#e5c98d">Eine Botschaft aus dem Wolfsrevier 🐺</p>
+</div>
+<p id="trail-storage-note" style="font-size:.85rem;color:#aebdca;margin:14px 0 0">Dein Fortschritt wird auf diesem Gerät gespeichert.</p>
+</div>
+</section>
 
 <section class="section" id="albumankuendigung">
 <h2>NEUES ALBUM: DUNKLER NORDEN</h2>
@@ -99,6 +132,7 @@ Dein Browser kann dieses Video leider nicht abspielen.
 <div id="spotify-player" aria-live="polite"></div>
 <div class="gold" style="text-align:center">ᚠ ᚱ ᚨ ᛉ ᛟ</div>
 </div>
+<div style="text-align:center;margin-top:18px"><button type="button" class="trail-button" data-trail="musik">🐾 Spur entdecken</button><p class="trail-message" id="trail-message-musik" hidden><strong>Der Klang:</strong> Musik gibt Gedanken eine Stimme und Gefühlen einen Klang. Manchmal sagt ein Lied, was Worte allein nicht ausdrücken können.</p></div>
 </section>
 
 <section class="section" id="blick-des-wolfes">
@@ -111,6 +145,7 @@ Dein Browser kann dieses Video leider nicht abspielen.
 <p style="color:#e5c98d">Ein Gedanke aus dem Wolfsrevier</p>
 <div class="gold">ᚠ ✦ ᚱ ✦ ᛟ</div>
 </div>
+<div style="text-align:center;margin-top:18px"><button type="button" class="trail-button" data-trail="blick">🐾 Spur entdecken</button><p class="trail-message" id="trail-message-blick" hidden><strong>Der Horizont:</strong> Schau zurück, um deinen Weg zu erkennen. Schau nach vorn, damit du deinen Horizont nicht verlierst.</p></div>
 </section>
 
 
@@ -170,6 +205,7 @@ Dein Browser kann dieses Video leider nicht abspielen.
 </article>
 </div>
 </div>
+<div style="text-align:center;margin-top:18px"><button type="button" class="trail-button" data-trail="rudel">🐾 Spur entdecken</button><p class="trail-message" id="trail-message-rudel" hidden><strong>Das Rudel:</strong> Eine Gemeinschaft entsteht dort, wo Menschen einander zuhören, respektieren und willkommen heißen.</p></div>
 </section>
 
 <section class="section" id="about">
@@ -193,6 +229,7 @@ Dein Browser kann dieses Video leider nicht abspielen.
 </div>
 </div>
 </div>
+<div style="text-align:center;margin-top:18px"><button type="button" class="trail-button" data-trail="ziel">🐾 Spur entdecken</button><p class="trail-message" id="trail-message-ziel" hidden><strong>Dein eigener Weg:</strong> Du musst nicht jedem gefallen. Wichtig ist, dass du deinen eigenen Weg mit Herz und Haltung gehst.</p></div>
 </section>
 
 <section class="section" id="social">
@@ -368,6 +405,47 @@ if(oracleDraw){
   oracleShareStatus.textContent='';
  });
 }
+
+
+const trailSpots=[
+ {id:'hero',title:'Der Anfang'},
+ {id:'musik',title:'Der Klang'},
+ {id:'blick',title:'Der Horizont'},
+ {id:'rudel',title:'Das Rudel'},
+ {id:'ziel',title:'Dein eigener Weg'}
+];
+const trailKey='wolfsrevier-entdeckungsreise-v1';
+let trailFound=[];
+try{trailFound=JSON.parse(localStorage.getItem(trailKey)||'[]');if(!Array.isArray(trailFound))trailFound=[];}catch(e){trailFound=[];}
+trailFound=trailFound.filter(id=>trailSpots.some(spot=>spot.id===id));
+function updateTrail(){
+ const dots=document.querySelectorAll('#trail-progress .trail-dot');
+ dots.forEach((dot,index)=>dot.classList.toggle('found',trailFound.includes(trailSpots[index].id)));
+ const count=document.getElementById('trail-count');
+ count.textContent=trailFound.length+' von 5 Spuren gefunden';
+ document.getElementById('trail-progress').setAttribute('aria-label','Fortschritt: '+trailFound.length+' von 5 Spuren');
+ document.querySelectorAll('[data-trail]').forEach(button=>{
+  const found=trailFound.includes(button.dataset.trail);
+  button.classList.toggle('found',found);
+  button.textContent=found?'✓ Spur entdeckt':'🐾 Spur entdecken';
+  const message=document.getElementById('trail-message-'+button.dataset.trail);
+  if(message) message.hidden=!found;
+ });
+ if(trailFound.length===5) document.getElementById('trail-complete').classList.add('show');
+}
+document.querySelectorAll('[data-trail]').forEach(button=>{
+ button.addEventListener('click',()=>{
+  const id=button.dataset.trail;
+  if(!trailFound.includes(id)){
+   trailFound.push(id);
+   try{localStorage.setItem(trailKey,JSON.stringify(trailFound));}catch(e){
+    document.getElementById('trail-storage-note').textContent='Der Fortschritt bleibt während dieses Besuchs erhalten. Dein Browser speichert ihn derzeit nicht dauerhaft.';
+   }
+  }
+  updateTrail();
+ });
+});
+updateTrail();
 
 </script>
 </body>
