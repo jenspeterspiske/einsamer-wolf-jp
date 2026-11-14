@@ -131,6 +131,11 @@ Dein Browser kann dieses Video leider nicht abspielen.
 <div id="oracle-result" class="panel" aria-live="polite" style="margin:22px 0;background:#091523;border-color:#c69a4a;text-align:center;min-height:145px;display:flex;flex-direction:column;justify-content:center">
 <p style="color:#aebdca;font-style:italic;margin:0">Dein Gedanke wartet darauf, entdeckt zu werden.</p>
 </div>
+<div id="oracle-share-controls" style="display:none;gap:12px;justify-content:center;flex-wrap:wrap;margin:0 0 18px">
+<button type="button" id="oracle-share" style="padding:12px 22px;border:1px solid #e5b85d;border-radius:28px;background:#172b40;color:#f0d49b;font:inherit;cursor:pointer">↗ Gedanken teilen</button>
+<button type="button" id="oracle-copy" style="padding:12px 22px;border:1px solid #c69a4a;border-radius:28px;background:#091523;color:#f0d49b;font:inherit;cursor:pointer">⧉ Text kopieren</button>
+</div>
+<p id="oracle-share-status" aria-live="polite" style="font-size:.9rem;color:#aebdca;min-height:1.4em"></p>
 <button type="button" id="oracle-draw" style="padding:14px 26px;border:1px solid #e5b85d;border-radius:28px;background:#172b40;color:#f0d49b;font:inherit;cursor:pointer;box-shadow:0 0 14px #c69a4a30">🐺 Gedanken ziehen</button>
 <p style="font-size:.9rem;color:#aebdca;margin-top:18px">Jeder Gedanke ist ein kleiner Wegbegleiter. Nimm mit, was sich für dich richtig anfühlt.</p>
 <div class="gold">ᚠ ✦ ᚱ ✦ ᛟ</div>
@@ -272,6 +277,46 @@ b.textContent="„"+h[n]+"“";
 b.classList.toggle('show');
 }
 
+
+let currentOracleThought='';
+const oracleShareControls=document.getElementById('oracle-share-controls');
+const oracleShareStatus=document.getElementById('oracle-share-status');
+function oracleShareText(){
+ return '„'+currentOracleThought+'“\\n\\nEin Gedanke aus dem Wolfsrevier 🐺\\n'+window.location.origin+window.location.pathname+'#orakel';
+}
+async function oracleCopyText(){
+ const text=oracleShareText();
+ try{
+  if(navigator.clipboard && window.isSecureContext){
+   await navigator.clipboard.writeText(text);
+  }else{
+   const field=document.createElement('textarea');
+   field.value=text;field.style.position='fixed';field.style.opacity='0';
+   document.body.appendChild(field);field.select();
+   const copied=document.execCommand('copy');field.remove();
+   if(!copied) throw new Error('Kopieren nicht verfügbar');
+  }
+  oracleShareStatus.textContent='Der Orakelgedanke wurde kopiert. Du kannst ihn jetzt überall einfügen.';
+ }catch(error){
+  oracleShareStatus.textContent='Das Kopieren hat leider nicht geklappt. Bitte markiere den Gedanken und kopiere ihn manuell.';
+ }
+}
+const oracleCopyButton=document.getElementById('oracle-copy');
+if(oracleCopyButton) oracleCopyButton.addEventListener('click',oracleCopyText);
+const oracleShareButton=document.getElementById('oracle-share');
+if(oracleShareButton) oracleShareButton.addEventListener('click',async()=>{
+ const data={title:'Ein Gedanke aus dem Wolfsrevier',text:oracleShareText()};
+ try{
+  if(navigator.share && (!navigator.canShare || navigator.canShare(data))){
+   await navigator.share(data);
+  }else{
+   await oracleCopyText();
+  }
+ }catch(error){
+  if(error.name!=='AbortError') oracleShareStatus.textContent='Teilen ist auf diesem Gerät gerade nicht verfügbar. Nutze bitte „Text kopieren“.';
+ }
+});
+
 const oracleThoughts={
 mut:[
 "Du musst nicht laut sein, um stark zu sein. Manchmal zeigt sich Stärke darin, trotz allem freundlich zu bleiben.",
@@ -318,6 +363,9 @@ if(oracleDraw){
   source.textContent='Ein Gedanke aus dem Wolfsrevier';
   source.style.cssText='color:#aebdca;margin:12px 0 0;font-size:.9rem';
   result.append(quote,source);
+  currentOracleThought=chosen.thought;
+  oracleShareControls.style.display='flex';
+  oracleShareStatus.textContent='';
  });
 }
 
